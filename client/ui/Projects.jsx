@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import gql from "graphql-tag";
 import { useQuery } from "@apollo/react-hooks";
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import NoProjs from "./NoProjs";
 
@@ -20,19 +20,21 @@ const Projects = props => {
   if (loading) return "Carregando..."
   if (error) return "Erro!" + error
 
+  console.log(data)
+
   if (!loading && data.projetosArquiteto.length == 0) return <NoProjs />;
   return (
-    <Fragment>
+    <div className="Manage">
       <h1>Projetos</h1>
       <ul>
         {
-          data.projetosArquiteto.map((proj, key) => {
+          data.projetosArquiteto.map((proj, key) => (
             <li key={key}>{proj.nome}</li>
-          })
+          ))
         }
       </ul>
       <Link to="/newproject" className="button">Novo Projeto</Link>
-    </Fragment>
+    </div>
   );
 };
 

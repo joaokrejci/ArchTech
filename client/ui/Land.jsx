@@ -6,6 +6,8 @@ import { Route } from 'react-router-dom'
 
 import Projects from './Projects'
 import NewProject from './NewProject'
+import Clients from './Clients'
+import NewClient from './NewClient'
 
 const Land = props => {
     this.logout = function() {
@@ -25,6 +27,8 @@ const Land = props => {
             <div id="content">
                 <Route path="/projetos"  component={Projects} />
                 <Route path="/newproject" component={NewProject} />
+                <Route path="/clientes"  component={Clients} />
+                <Route path="/newclient" component={NewClient} />
             </div>
         </div>
     )

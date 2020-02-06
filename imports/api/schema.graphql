@@ -2,6 +2,7 @@ type Cliente {
   _id: ID!
   nome: String
   email: String
+  arquiteto: ID!
 }
 
 type User {
@@ -17,7 +18,7 @@ type Projeto {
 }
 
 type Query {
-  clientes: [Cliente]
+  clientesArquiteto(arquiteto: ID!): [Cliente]
   cliente(id: ID!): Cliente
   projeto(id: ID!): Projeto
   projetosArquiteto(arquiteto: ID!): [Projeto]
@@ -27,4 +28,5 @@ type Query {
 
 type Mutation {
   insertProjeto(nome: String!, arquiteto: ID!): Projeto
+  insertCliente(nome: String!, email: String!, arquiteto: ID!): Cliente
 }

@@ -17,7 +17,7 @@ const NewProject = props => {
 
   this.handleSubmit = function (ev) {
     ev.preventDefault();
-    insertProjeto({variables: {nome: this.nome.value, arquiteto: Meteor.userId()}}).then( res => {this.console.log("sucesso")})        
+    insertProjeto({variables: {nome: this.nome.value, arquiteto: Meteor.userId()}})
   };
   return (
     <div className="NewProject">

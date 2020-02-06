@@ -4,8 +4,8 @@ import Meteor from 'meteor/meteor'
 
 const resolvers = {
     Query: {
-        clientes() {
-            return Cliente.find({}).fetch()
+        clientesArquiteto(arquiteto) {
+            return Cliente.find({ arquiteto }).fetch()
         },
         cliente(id) {
             return Cliente.findOne({ _id: id })
@@ -21,8 +21,11 @@ const resolvers = {
         }
     },
     Mutation: {
-        insertProjeto(obj, { nome, arquiteto }, context) {            
-            Projeto.insert({nome, arquiteto, clientes: []})
+        insertProjeto(obj, { nome, arquiteto }, context) {
+            Projeto.insert({ nome, arquiteto, clientes: [] })
+        },
+        insertCliente(obj, { nome, email, arquiteto }, context) {
+            Cliente.insert({nome,email,arquiteto})
         }
     }
 }
