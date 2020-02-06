@@ -1,0 +1,30 @@
+type Cliente {
+  _id: ID!
+  nome: String
+  email: String
+}
+
+type User {
+  _id: ID!
+  username: String
+}
+
+type Projeto {
+  _id: ID!
+  nome: String
+  arquiteto: ID!
+  clientes: [Cliente]
+}
+
+type Query {
+  clientes: [Cliente]
+  cliente(id: ID!): Cliente
+  projeto(id: ID!): Projeto
+  projetosArquiteto(arquiteto: ID!): [Projeto]
+  user(id: ID!): User
+  users: [User]
+}
+
+type Mutation {
+  insertProjeto(nome: String!, arquiteto: ID!): Projeto
+}

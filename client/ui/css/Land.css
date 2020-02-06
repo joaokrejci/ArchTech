@@ -1,0 +1,44 @@
+.Land {    
+    position: fixed;    
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.Land header {
+    color: white;
+    background: #8a2be2;    
+    height: 60px;    
+    display: flex;
+    align-items: center;    
+    justify-content: space-between;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);    
+    padding: 0 10px;
+}
+
+.Land header h1 {
+    margin: 0;
+    font-size: 20px;
+    text-align: left;
+    font-weight: 400;
+}
+
+.Land header a {
+    color: white;
+}
+
+.Land nav {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    background: #7222bd;
+    justify-content: flex-start;
+    position: absolute;
+    bottom: 0; top: 60px;
+    text-align: left;
+    padding: 10px;
+}
+
+.Land nav a {
+    text-decoration: none;
+    color: white;
+    margin-top: 10px;
+}
